@@ -21,8 +21,9 @@ const Article = require('../../models/article');
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+
   on('task', {
-    cleanDb: async () => Promise.all([Article.deleteMany()]),
-    createArticle: async (data) => Promise.all([Article.createArticle(data)]),
+    cleanDB: () => Article.deleteAllArticles(),
+    createArticle: (data) => Article.createArticle(data),
   });
 };

@@ -1,5 +1,9 @@
 const db = require('../db');
 
+async function deleteAllArticles() {
+  return db.article.deleteMany();
+}
+
 async function createArticle(data) {
   return db.article.create({ data });
 }
@@ -9,7 +13,7 @@ async function getAllArticles() {
 }
 
 module.exports = {
-  createArticle,
+  deleteAllArticles,
   getAllArticles,
-  deleteMany: db.article.deleteMany,
+  createArticle,
 };

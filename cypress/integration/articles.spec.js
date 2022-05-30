@@ -1,4 +1,7 @@
 describe('articles', () => {
+  beforeEach(() => {
+    cy.viewport('iphone-6');
+  });
   it('shows all articles in DB', () => {
     cy.task('cleanDB');
     cy.task('createArticle', { title: 'test1' });

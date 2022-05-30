@@ -1,4 +1,4 @@
-const Article = require('../../models/article');
+const { deleteAllArticles, createArticle } = require('../../models/article');
 
 /// <reference types="cypress" />
 // ***********************************************************
@@ -23,7 +23,7 @@ module.exports = (on, config) => {
   // `config` is the resolved Cypress config
 
   on('task', {
-    cleanDB: () => Article.deleteAllArticles(),
-    createArticle: (data) => Article.createArticle(data),
+    cleanDB: () => deleteAllArticles(),
+    createArticle,
   });
 };

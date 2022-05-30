@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "resetDB": "npx prisma migrate reset",
+    "generate-db-client": "npx prisma generate",
+    "showDB": "npx prisma studio",
+    "migrate:deploy": "npx prisma migrate deploy",
+    "test:gui": "cypress open",
+    "test": "cypress run"
   },
   "dependencies": {
     "@prisma/client": "3.14.0",

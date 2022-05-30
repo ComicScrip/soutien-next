@@ -14,6 +14,6 @@ async function getAllArticles() {
 
 module.exports = {
   deleteAllArticles,
-  getAllArticles,
   createArticle,
+  getAllArticles,
 };

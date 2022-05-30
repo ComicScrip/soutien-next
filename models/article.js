@@ -12,8 +12,13 @@ async function getAllArticles() {
   return db.article.findMany();
 }
 
+async function findArticleById(id) {
+  return db.article.findUnique({ where: { id: parseInt(id, 10) } });
+}
+
 module.exports = {
   deleteAllArticles,
   createArticle,
   getAllArticles,
+  findArticleById,
 };

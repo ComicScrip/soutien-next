@@ -8,8 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "resetDB": "npx prisma migrate reset",
-    "generate-db-client": "npx prisma generate",
+    "migrateDB": "npx prisma migrate dev",
     "showDB": "npx prisma studio",
+    "generate-db-client": "npx prisma generate",
     "migrate:deploy": "npx prisma migrate deploy",
     "test:gui": "cypress open",
     "test": "cypress run"

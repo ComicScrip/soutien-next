@@ -1,5 +1,7 @@
-import { getAllArticles } from '../../models/article';
+import { createArticle, getAllArticles } from '../../models/article';
 
 export default async function handler(req, res) {
-  res.send(await getAllArticles());
+  if (req.method === 'GET') res.send(await getAllArticles());
+  else if (req.method === 'POST') res.send(await createArticle(req.body));
+  else res.status(405).send();
 }
